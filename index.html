@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danish Mehmud — Senior Full-Stack Software Engineer</title>
+    <meta
+      name="description"
+      content="Senior Full-Stack Software Engineer with 8+ years of experience building scalable web applications, enterprise platforms, and AI-powered solutions."
+    />
+    <meta
+      name="keywords"
+      content="software engineer, full-stack, javascript, typescript, react, angular, node.js, AI, LLM"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("assets/SpaceGrotesk.ttf") format("truetype");
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #f5f1eb;
+        --surface: #ffffff;
+        --sidebar: #1a2332;
+        --sidebar-muted: #94a3b8;
+        --text: #2d3142;
+        --text-light: #5c6378;
+        --accent: #c17f59;
+        --accent-soft: #f0e4dc;
+        --border: #e2ddd5;
+        --radius: 6px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.65;
+        font-size: 16px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: #a06845;
+      }
+
+      /* ── Layout ── */
+      .layout {
+        display: grid;
+        min-height: 100vh;
+      }
+
+      @media (min-width: 900px) {
+        .layout {
+          grid-template-columns: 300px 1fr;
+        }
+      }
+
+      /* ── Sidebar ── */
+      .sidebar {
+        background: linear-gradient(165deg, #1e2a3a 0%, #141c28 55%, #0f1520 100%);
+        color: #f1f5f9;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sidebar::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -60px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(193, 127, 89, 0.18) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      @media (min-width: 900px) {
+        .sidebar {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          overflow-y: auto;
+          padding: 2.5rem 1.75rem;
+        }
+      }
+
+      .sidebar__profile {
+        position: relative;
+        padding-bottom: 1.75rem;
+        margin-bottom: 1.75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .sidebar__avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent) 0%, #a06845 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.04em;
+        margin-bottom: 1rem;
+        box-shadow: 0 8px 24px rgba(193, 127, 89, 0.35);
+      }
+
+      .sidebar__name {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .sidebar__title {
+        font-size: 0.8125rem;
+        color: var(--sidebar-muted);
+        margin-top: 0.4rem;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .sidebar__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.85rem;
+        padding: 0.3rem 0.65rem;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #86efac;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        border-radius: 100px;
+      }
+
+      .sidebar__badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #4ade80;
+        box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+      }
+
+      .sidebar__nav-label {
+        font-size: 0.625rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(148, 163, 184, 0.6);
+        margin-bottom: 0.65rem;
+        padding-left: 0.75rem;
+      }
+
+      .sidebar__nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        flex: 1;
+      }
+
+      @media (max-width: 899px) {
+        .sidebar__nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+        }
+
+        .sidebar__nav-label {
+          display: none;
+        }
+      }
+
+      .sidebar__nav a {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.6rem 0.75rem;
+        color: var(--sidebar-muted);
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+      }
+
+      .sidebar__nav a svg {
+        flex-shrink: 0;
+        opacity: 0.55;
+        transition: opacity 0.2s;
+      }
+
+      .sidebar__nav a:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+
+      .sidebar__nav a:hover svg {
+        opacity: 0.9;
+      }
+
+      .sidebar__nav a.active {
+        background: rgba(193, 127, 89, 0.15);
+        color: #fff;
+        border-color: rgba(193, 127, 89, 0.3);
+        box-shadow: inset 3px 0 0 var(--accent);
+      }
+
+      .sidebar__nav a.active svg {
+        opacity: 1;
+        color: var(--accent);
+      }
+
+      .sidebar__contact {
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      @media (max-width: 899px) {
+        .sidebar__contact {
+          margin-top: 1.5rem;
+        }
+      }
+
+      .sidebar__contact-label {
+        font-size: 0.625rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(148, 163, 184, 0.6);
+        margin-bottom: 0.25rem;
+      }
+
+      .sidebar__contact-item {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        align-items: center;
+        column-gap: 0.65rem;
+        font-size: 0.8125rem;
+        color: var(--sidebar-muted);
+        line-height: 1.4;
+        min-height: 20px;
+      }
+
+      .sidebar__contact-item a {
+        color: var(--sidebar-muted);
+        transition: color 0.2s;
+      }
+
+      .sidebar__contact-item a:hover {
+        color: #fff;
+      }
+
+      .sidebar__contact-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--accent);
+        opacity: 0.85;
+      }
+
+      .sidebar__contact-icon svg {
+        display: block;
+      }
+
+      /* ── Main content ── */
+      .main {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      @media (min-width: 600px) {
+        .main {
+          padding: 3.5rem 3rem 5rem;
+        }
+      }
+
+      @media (min-width: 1100px) {
+        .main {
+          padding: 4rem 5rem 6rem;
+          max-width: 900px;
+        }
+      }
+
+      /* ── Sections ── */
+      section {
+        margin-bottom: 4rem;
+      }
+
+      section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-label {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+
+      /* ── About ── */
+      .about__text {
+        font-size: 1.0625rem;
+        color: var(--text-light);
+        max-width: 640px;
+      }
+
+      /* ── Experience ── */
+      .job {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .job:last-child {
+        margin-bottom: 0;
+      }
+
+      .job__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.5rem 1.5rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .job__role {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 1.2rem;
+        color: var(--text);
+      }
+
+      .job__date {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+
+      .job__company {
+        font-size: 0.875rem;
+        color: var(--text-light);
+        margin-bottom: 1.25rem;
+      }
+
+      .job__company em {
+        font-style: normal;
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .job ul {
+        padding-left: 1.15rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+
+      .job li {
+        font-size: 0.9375rem;
+        color: var(--text-light);
+      }
+
+      .job li::marker {
+        color: var(--accent);
+      }
+
+      /* ── Education ── */
+      .edu-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        border-left: 3px solid var(--accent);
+      }
+
+      .edu-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .edu-card p {
+        font-size: 0.9375rem;
+        color: var(--text-light);
+      }
+
+      /* ── Skills ── */
+      .skill-group {
+        margin-bottom: 1.75rem;
+      }
+
+      .skill-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .skill-group h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.85rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-tag {
+        display: inline-block;
+        padding: 0.4rem 0.85rem;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        transition: border-color 0.2s, background 0.2s;
+      }
+
+      .skill-tag:hover {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      /* ── Contact ── */
+      .contact-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      @media (min-width: 600px) {
+        .contact-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .contact-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .contact-card__icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 0.75rem;
+        background: var(--accent-soft);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+      }
+
+      .contact-card h4 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-light);
+        margin-bottom: 0.35rem;
+      }
+
+      .contact-card p,
+      .contact-card a {
+        font-size: 0.875rem;
+        color: var(--text);
+      }
+
+      /* ── Footer ── */
+      .footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.8125rem;
+        color: var(--text-light);
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__profile">
+          <div class="sidebar__avatar">DM</div>
+          <div class="sidebar__name">Danish Mehmud</div>
+          <div class="sidebar__title">
+            Senior Full-Stack Software Engineer
+          </div>
+          <span class="sidebar__badge">Available</span>
+        </div>
+
+        <nav>
+          <div class="sidebar__nav-label">Navigation</div>
+          <ul class="sidebar__nav">
+            <li>
+              <a href="#about" class="active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#experience">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                Experience
+              </a>
+            </li>
+            <li>
+              <a href="#education">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+                Education
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__contact">
+          <div class="sidebar__contact-label">Contact</div>
+          <div class="sidebar__contact-item">
+            <span class="sidebar__contact-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <a href="mailto:danishmehmud.works@gmail.com">danishmehmud.works@gmail.com</a>
+          </div>
+          <div class="sidebar__contact-item">
+            <span class="sidebar__contact-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <a href="tel:+19298530344">+1 929 853 0344</a>
+          </div>
+          <div class="sidebar__contact-item">
+            <span class="sidebar__contact-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>New York, United States</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- About -->
+        <section id="about">
+          <div class="section-label">Introduction</div>
+          <h2 class="section-heading">About</h2>
+          <p class="about__text">
+            Full-Stack Software Engineer with 8+ years of experience building
+            scalable web applications, enterprise platforms, and AI-powered
+            solutions. Strong expertise in JavaScript, TypeScript, Angular,
+            React, and Node.js, with additional experience in .NET/C#, Python,
+            and PHP. Experienced in designing modern frontend architectures,
+            developing backend APIs, optimizing databases, and integrating
+            LLM-based AI features. Proven track record of delivering
+            high-quality software in Agile environments across e-commerce,
+            logistics, and enterprise domains.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+          <div class="section-label">Work History</div>
+          <h2 class="section-heading">Experience</h2>
+
+          <article class="job">
+            <div class="job__header">
+              <h3 class="job__role">Senior Full-Stack Software Engineer</h3>
+              <span class="job__date">Oct 2022 — Present</span>
+            </div>
+            <p class="job__company">
+              <em>Semantic Health</em> — Canada (Remote)
+            </p>
+            <ul>
+              <li>
+                Develop and maintain enterprise-scale web applications using
+                Angular, TypeScript, Node.js, and SQL Server.
+              </li>
+              <li>
+                Lead frontend architecture initiatives, implementing scalable
+                and reusable component-based solutions across multiple
+                applications.
+              </li>
+              <li>
+                Contribute to a high-volume e-commerce platform for a leading
+                U.S.-based sports brand, supporting order management, logistics,
+                and inventory operations.
+              </li>
+              <li>
+                Design and build modern React (Next.js) applications with a
+                focus on performance, maintainability, and user experience.
+              </li>
+              <li>
+                Develop RESTful APIs and backend services to support
+                business-critical workflows and integrations.
+              </li>
+              <li>
+                Optimize SQL Server performance through query tuning, indexing
+                strategies, stored procedures, and database design
+                improvements.
+              </li>
+              <li>
+                Implement AI-powered features using OpenAI APIs, LLMs, and
+                Retrieval-Augmented Generation (RAG) pipelines.
+              </li>
+              <li>
+                Build workflow automation and AI agent solutions using LangChain
+                and LangGraph.
+              </li>
+              <li>
+                Deploy and maintain cloud-based solutions on AWS, leveraging
+                services such as EC2 and S3.
+              </li>
+              <li>
+                Collaborate with product managers, designers, QA engineers, and
+                stakeholders in Agile/Scrum teams to deliver high-quality
+                software solutions.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job__header">
+              <h3 class="job__role">Full-Stack Software Engineer</h3>
+              <span class="job__date">May 2018 — Sep 2022</span>
+            </div>
+            <p class="job__company">
+              <em>CMU Nerds</em> — Dickinson, TX
+            </p>
+            <ul>
+              <li>
+                Developed and maintained enterprise web applications using
+                ASP.NET, C#, JavaScript, Node.js, and SQL Server.
+              </li>
+              <li>
+                Designed and implemented RESTful APIs, backend services, and
+                database solutions for internal and client-facing applications.
+              </li>
+              <li>
+                Built responsive and interactive user interfaces using Angular,
+                React, and modern frontend technologies.
+              </li>
+              <li>
+                Participated in the full software development lifecycle, from
+                requirements gathering and technical design to deployment and
+                maintenance.
+              </li>
+              <li>
+                Developed scalable business solutions while ensuring code
+                quality, security, and application performance.
+              </li>
+              <li>
+                Created and maintained automated test suites using Jest, Jasmine,
+                and Karma, following Test-Driven Development (TDD) practices.
+              </li>
+              <li>
+                Worked extensively with Git-based workflows, code reviews, CI/CD
+                pipelines, and Agile development processes.
+              </li>
+              <li>
+                Contributed to modernization initiatives, including migration
+                and maintenance of legacy Silverlight applications.
+              </li>
+              <li>
+                Collaborated closely with cross-functional teams to deliver
+                projects on schedule and support ongoing product enhancements.
+              </li>
+              <li>
+                Provided technical support, troubleshooting, and performance
+                optimization for production systems serving business-critical
+                operations.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+          <div class="section-label">Background</div>
+          <h2 class="section-heading">Education</h2>
+          <div class="edu-card">
+            <h3>Self-Taught Software Engineer</h3>
+            <p>
+              Continuous self-directed learning in software engineering,
+              full-stack development, and modern AI technologies.
+            </p>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+          <div class="section-label">Technologies</div>
+          <h2 class="section-heading">Skills</h2>
+
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">Vue.js</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">SCSS</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Styled Components</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">Node.js (Express, NestJS, Fastify)</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">ASP.NET</span>
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">C#</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>AI Development</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">OpenAI APIs</span>
+              <span class="skill-tag">LLM Integration</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">LangGraph</span>
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">AI Agents</span>
+              <span class="skill-tag">Function/Tool Calling</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Database &amp; API</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">GraphQL</span>
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Entity Framework</span>
+              <span class="skill-tag">TypeORM</span>
+              <span class="skill-tag">Dapper</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>DevOps &amp; Tools</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">AWS (EC2, S3)</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD Pipelines</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Testing</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">TDD</span>
+              <span class="skill-tag">Jest</span>
+              <span class="skill-tag">Jasmine</span>
+              <span class="skill-tag">Karma</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+          <div class="section-label">Get in Touch</div>
+          <h2 class="section-heading">Contact</h2>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h4>Location</h4>
+              <p>New York, United States</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:danishmehmud.works@gmail.com"
+                  >danishmehmud.works@gmail.com</a
+                >
+              </p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <h4>Phone</h4>
+              <p><a href="tel:+19298530344">+1 929 853 0344</a></p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          &copy; 2026 Danish Mehmud. All rights reserved.
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(".sidebar__nav a");
+        const sections = document.querySelectorAll("section");
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", (e) => {
+            e.preventDefault();
+            document
+              .querySelector(anchor.getAttribute("href"))
+              .scrollIntoView({ behavior: "smooth" });
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach((link) => {
+                  link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === `#${id}`
+                  );
+                });
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -50% 0px" }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script>
+  </body>
+</html>
