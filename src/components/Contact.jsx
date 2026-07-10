@@ -70,7 +70,7 @@ const Contact = () => {
 
     return (
         <div
-            className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+            className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-visible`}
         >
             <motion.div
                 variants={slideIn('left', 'tween', 0.2, 1)}
@@ -154,8 +154,24 @@ const Contact = () => {
             <motion.div
                 variants={slideIn('right', 'tween', 0.2, 1)}
                 className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+                style={{
+                    transform: 'translateX(0%) translateY(0px) translateZ(0px)',
+                }}
             >
-                <EarthCanvas />
+                <div
+                    style={{
+                        position: 'relative',
+                        width: '100%',
+                        height: '100%',
+                        overflow: 'hidden',
+                        pointerEvents: 'auto',
+                        touchAction: 'none',
+                    }}
+                >
+                    <div style={{ width: '100%', height: '100%' }}>
+                        <EarthCanvas />
+                    </div>
+                </div>
             </motion.div>
         </div>
     );

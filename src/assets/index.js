@@ -54,6 +54,7 @@ import weinform from './company/weinform.png';
 import gemini from './company/gemini-energy-solutions.png';
 import keefe from './company/keefe-group.png';
 import tb from './company/tb-12-sports.png';
+import resume from './Danish-Software-Engineer-FullStack.pdf';
 
 export {
     cmunerds,
@@ -108,4 +109,5 @@ export {
     gemini,
     tb,
     keefe,
+    resume,
 };

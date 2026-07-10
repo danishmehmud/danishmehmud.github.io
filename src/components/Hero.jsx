@@ -36,7 +36,7 @@ const Hero = () => {
                     </p>
                     <div className={'mt-5 h-[2px] w-28 rounded-full bg-gradient-to-r from-[#60b7ff] to-[#bf65ff]'} />
                     <p className={`${styles.heroSubText} mt-6 max-w-3xl text-white-100 leading-8`}>
-                        Building scalable enterprise applications, AI-powered solutions, and cloud-native platforms with React, Node.js, AWS, and modern web technologies.
+                        Building scalable enterprise applications, AI-powered solutions, and cloud-native platforms with React, Angular, Node.js, AWS, and modern web technologies.
                     </p>
                     <div className={'mt-6 flex flex-wrap items-center gap-3'}>
                         {skills.map((skill) => (

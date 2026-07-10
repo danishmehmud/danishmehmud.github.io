@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { styles } from '../style.js';
-import { logo, menu, close } from '../assets/index.js';
+import { logo, menu, close, resume } from '../assets/index.js';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../constants/index.js';
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                     ))}
                 </ul>
                 <a
-                    href={'/resume.pdf'}
+                    href={resume}
                     download
                     className={
                         'hidden sm:inline-flex items-center rounded-full border border-[#915eff] bg-[#915eff]/10 px-5 py-2 text-[14px] font-medium text-white transition hover:bg-[#915eff]/20'
