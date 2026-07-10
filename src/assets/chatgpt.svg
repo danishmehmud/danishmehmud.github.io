@@ -1,0 +1,43 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1220" />
+      <stop offset="1" stop-color="#06101f" />
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1300 200) rotate(45) scale(600)">
+      <stop stop-color="#10A37F" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#10A37F" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="light2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 230) rotate(45) scale(420)">
+      <stop stop-color="#7BE5A1" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#7BE5A1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" rx="0" fill="url(#bg)" />
+  <circle cx="1280" cy="220" r="240" fill="url(#light)" />
+  <circle cx="280" cy="200" r="180" fill="url(#light2)" />
+  <circle cx="900" cy="700" r="260" fill="#0f1b31" opacity="0.35" />
+  <circle cx="410" cy="600" r="120" fill="#10203b" opacity="0.55" />
+  <circle cx="1180" cy="560" r="90" fill="#0d172a" opacity="0.7" />
+  <g opacity="0.15" fill="#9adbb8">
+    <circle cx="210" cy="130" r="35" />
+    <circle cx="150" cy="340" r="18" />
+    <circle cx="1240" cy="820" r="24" />
+    <circle cx="870" cy="110" r="14" />
+    <circle cx="520" cy="760" r="20" />
+  </g>
+  <path d="M960 420C960 376.686 1027.18 312 1112 312C1196.82 312 1264 376.686 1264 420C1264 463.314 1196.82 528 1112 528C1027.18 528 960 463.314 960 420Z" fill="#0f2d21" opacity="0.8" />
+  <path d="M1080 280C1107.614 280 1130 302.386 1130 330V450C1130 477.614 1107.614 500 1080 500H1040V520H1020V500H1020V470H1040V330C1040 306.386 1061.386 285 1080 285H1080Z" fill="#10A37F" opacity="0.95" />
+  <g opacity="0.9">
+    <path d="M845 275H755C742.745 275 733 284.745 733 297V475C733 487.255 742.745 497 755 497H845C857.255 497 867 487.255 867 475V297C867 284.745 857.255 275 845 275Z" fill="#0f1f2f" />
+    <path d="M806 315C807.657 315 809 316.343 809 318V454C809 455.657 807.657 457 806 457H794C792.343 457 791 455.657 791 454V318C791 316.343 792.343 315 794 315H806Z" fill="#10A37F" />
+    <path d="M824 315C825.657 315 827 316.343 827 318V454C827 455.657 825.657 457 824 457H812C810.343 457 809 455.657 809 454V318C809 316.343 810.343 315 812 315H824Z" fill="#10A37F" />
+  </g>
+  <text x="80" y="120" fill="#9adbb8" font-family="Poppins, sans-serif" font-size="42" font-weight="700">AI interactive assistant</text>
+  <text x="80" y="190" fill="#ffffff" font-family="Poppins, sans-serif" font-size="86" font-weight="800">ChatGPT-inspired</text>
+  <text x="80" y="270" fill="#a3f8c9" font-family="Poppins, sans-serif" font-size="38" font-weight="500">Styled hero background for intelligent UI</text>
+  <rect x="80" y="320" width="340" height="40" rx="20" fill="#10A37F" fill-opacity="0.16" />
+  <rect x="80" y="380" width="260" height="32" rx="16" fill="#ffffff" fill-opacity="0.08" />
+  <rect x="80" y="430" width="200" height="28" rx="14" fill="#ffffff" fill-opacity="0.06" />
+  <rect x="80" y="480" width="180" height="24" rx="12" fill="#ffffff" fill-opacity="0.05" />
+</svg>
