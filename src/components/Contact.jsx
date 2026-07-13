@@ -80,7 +80,7 @@ const Contact = () => {
                 <h3 className={styles.sectionHeadText}>Contact.</h3>
                 <div className="mt-6 rounded-[24px] border border-[#2f334a] bg-[#0d1128] p-5 text-sm text-secondary">
                     <p className="text-white text-base font-medium">
-                        New York City, NY
+                        Floral Park, NY, 11001
                     </p>
                     <p className="mt-2 flex flex-wrap gap-2 text-[#a3b5ff]">
                         <a href="tel:+19298530344" className="hover:text-white transition-colors duration-200">

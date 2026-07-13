@@ -37,6 +37,10 @@ export const navLinks = [
         title: 'Work',
     },
     {
+        id: 'portfolio',
+        title: 'Projects',
+    },
+    {
         id: 'contact',
         title: 'Contact',
     },
@@ -132,7 +136,8 @@ const experiences = [
         ],
     },
     {
-        title: 'Software Engineer (MEAN Stack)',
+        title: 'Software Engineer',
+        subtitle: '(MERN Stack)',
         company_name: 'CMU Nerds',
         icon: cmunerds,
         iconBg: '#fff',
@@ -157,7 +162,7 @@ const testimonials = [
             "Danish consistently delivered high-quality solutions and handled complex technical challenges with confidence. His ability to understand business requirements and turn them into reliable software made him a valuable member of our engineering team.",
         name: 'Michael Johnson',
         designation: 'Product Manager',
-        company: 'Semantic Health',
+        company: '',
         image: 'https://randomuser.me/api/portraits/men/40.jpg',
     },
     {
