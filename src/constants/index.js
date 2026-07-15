@@ -119,7 +119,7 @@ const technologies = [
 const experiences = [
     {
         title: 'Senior Software Engineer (Full Stack)',
-        company_name: 'Root Strap',
+        company_name: 'Semantic Health',
         icon: sementiclogo,
         iconBg: '#fff',
         date: 'Apr 2023 - Present',
@@ -138,7 +138,7 @@ const experiences = [
     {
         title: 'Software Engineer',
         subtitle: '(MERN Stack)',
-        company_name: 'SumatoSoft',
+        company_name: 'CMU Nerds',
         icon: cmunerds,
         iconBg: '#fff',
         date: 'Jun 2019 - Mar 2023',
